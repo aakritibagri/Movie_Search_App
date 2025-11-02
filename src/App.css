@@ -1,38 +1,182 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  background: #232733;
+  color: #fff;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
+  justify-content: flex-start;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 2rem 0 1.5rem 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+form {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+input[type='text'] {
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 1.1rem;
+  width: 250px;
+  outline: none;
+  background-color: #b6ceff;
+  color: #1d0230;
+}
+
+button[type='submit'] {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background: #1fa2ff;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+
+button[type='submit']:hover {
+  background: #1976d2;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 2rem;
+  width: 90vw;
+  max-width: 1200px;
 }
 
-.App-link {
-  color: #61dafb;
+.movie-card {
+  background: #323848;
+  border-radius: 10px;
+  box-shadow: 0 4px 32px 0 #181c2490;
+  padding: 1rem 1rem 0.5rem 1rem;
+  text-align: center;
+  width: 220px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.movie-card:hover {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 8px 32px 0 #182c4a80;
+}
+
+.movie-card img {
+  width: 170px;
+  height: 255px;
+  object-fit: cover;
+  border-radius: 7px;
+  margin-bottom: 1rem;
+  background: #252a38;
+}
+
+.movie-card h3 {
+  margin: 0.5rem 0 0.3rem 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1fa2ff;
+}
+
+.movie-card p {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+.overlay {
+  background: rgba(10, 10, 20, 0.7);
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 999;
+}
+
+.modal {
+  max-width: 620px;
+  background: #22252c;
+  color: #fff;
+  margin: 6vh auto;
+  padding: 2rem;
+  border-radius: 14px;
+  outline: none;
+  position: relative;
+  box-shadow: 0 4px 44px 0 #131527bf;
+  z-index: 1000;
+}
+.movie-card:focus {
+  outline: 2px solid #1fa2ff;
+  outline-offset: 3px;
+}
+button:focus,
+input:focus {
+  outline: 2px solid #1fa2ff;
+}
+.movie-card {
+  background: #323848;
+  border-radius: 10px;
+  box-shadow: 0 4px 32px 0 #181c2490;
+  padding: 1rem 1rem 0.5rem 1rem;
+  text-align: center;
+  width: 220px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.movie-card:hover,
+.movie-card:focus {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 8px 32px 0 #182c4a80;
+  outline: none; /* For keyboard focus, we add a visible outline separately */
+}
+
+.movie-card:focus-visible {
+  outline: 2px solid #1fa2ff;
+  outline-offset: 3px;
+}
+:root {
+  --primary-color: #1fa2ff;
+  --background-color: #232733;
+  --card-bg-color: #323848;
+  --text-color: #fff;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.app-logo {
+  display: block;
+  margin: 0 auto 16px auto; /* Center horizontally and add space below */
+  height: 250px;
+  width: 250px;
+  object-fit: contain;      /* Prevent stretching */
+  border-radius: 16px;      /* Optional: rounded corners for modern look */
+  box-shadow: 0 2px 16px 0 #191c2040; /* Soft shadow */
+  background: #fff;         /* Optional: logo background */
+}
+
+/* Adjust for smaller screens if needed */
+@media (max-width: 600px) {
+  .app-logo {
+    height: 60px;
+    width: 60px;
+    margin-bottom: 10px;
   }
 }
