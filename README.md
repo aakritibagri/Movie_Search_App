@@ -2,7 +2,7 @@
 <html lang="en">
 <body>
   <h1>🎬 Movie_Search_App</h1>
-  <p>A React-based web application for searching movies using the <strong>OMDb API</strong>.</p>
+  <p>A <b>React</b> -based web application for searching movies using the <strong>OMDb API</strong>.</p>
 
   <div class="section">
     <h2>✨ Features</h2>
