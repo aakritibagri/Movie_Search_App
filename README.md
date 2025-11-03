@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+<!DOCTYPE html>
+<html lang="en">
+<body>
+  <h1>🎬 Movie_Search_App</h1>
+  <p>A React-based web application for searching movies using the <strong>OMDb API</strong>.</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <div class="section">
+    <h2>✨ Features</h2>
+    <ul>
+      <li><strong>Movie Search:</strong> Search for movies by title using the OMDb API.</li>
+      <li><strong>Movie Details Modal:</strong> View detailed information about a movie along with an embedded trailer fetched dynamically from YouTube.</li>
+      <li><strong>Responsive Design:</strong> Works well on desktop and mobile devices.</li>
+    </ul>
+  </div>
 
-## Available Scripts
+  <div class="section">
+    <h2>⚙️ Getting Started</h2>
+    <h3>Prerequisites</h3>
+    <ul>
+      <li>Node.js (v14 or later recommended)</li>
+      <li>npm (comes bundled with Node.js)</li>
+      <li>OMDb API key (get one from OMDb API)</li>
+    </ul>
 
-In the project directory, you can run:
+    <h3>Installation</h3>
+    <p>Clone the repository:</p>
+    <pre><code>git clone https://github.com/yourusername/movie-search-app.git
+cd movie-search-app</code></pre>
 
-### `npm start`
+    <p>Install dependencies:</p>
+    <pre><code>npm install</code></pre>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    <p>Add your OMDb API key and YouTube API key:</p>
+    <ul>
+      <li>Replace <code>API_KEY</code> value in <code>src/App.js</code> with your OMDb API key.</li>
+      <li>Replace <code>YOUR_YOUTUBE_API_KEY</code> in <code>fetchTrailerId</code> function inside <code>src/App.js</code>.</li>
+    </ul>
+  </div>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  <div class="section">
+    <h2>🚀 Run the App</h2>
+    <pre><code>npm start</code></pre>
+    <p>Open <a href="http://localhost:3000" target="_blank">http://localhost:3000</a> to view it in the browser.</p>
+  </div>
 
-### `npm test`
+  <div class="section">
+    <h2>🧭 Usage</h2>
+    <ul>
+      <li>Use the search bar to find movies by title.</li>
+      <li>Click on a movie card to view details and watch the trailer.</li>
+      <li>Click the star icon on a movie card to add it to your favorites.</li>
+    </ul>
+  </div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  <div class="section">
+    <h2>🧩 Component Overview</h2>
+    <ul>
+      <li><code>App.js</code>: Main component managing state, API calls, and feature integration.</li>
+      <li><code>SearchBar.js</code>: Input form for movie searches.</li>
+      <li><code>MovieList.js</code>: Displays a list of <code>MovieCard</code>s.</li>
+      <li><code>MovieCard.js</code>: Shows movie poster, title, year, and favorite toggle.</li>
+      <li><code>MovieDetails.js</code>: Modal popup displaying movie detail info and embedded trailer.</li>
+    </ul>
+  </div>
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  <div class="section">
+    <h2>📝 Notes</h2>
+    <ul>
+      <li>Favorites are saved in browser <code>localStorage</code>.</li>
+      <li>Styling uses basic CSS but can be extended with frameworks or custom themes.</li>
+    </ul>
+  </div>
+</body>
+</html>
