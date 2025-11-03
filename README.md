@@ -42,7 +42,8 @@ cd movie-search-app</code></pre>
     <pre><code>npm start</code></pre>
     <p>Open <a href="http://localhost:3000" target="_blank">http://localhost:3000</a> to view it in the browser.</p>
   </div>
-
+   <img src="https://github.com/aakritibagri/Movie_Search_App/blob/main/Screenshot%202025-11-03%20122228.png?raw=true">
+   <img src="
   <div class="section">
     <h2>🧭 Usage</h2>
     <ul>
