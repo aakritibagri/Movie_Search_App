@@ -1,182 +1,241 @@
-body {
+/* General Body and Root */
+body, html, #root {
   margin: 0;
-  font-family: 'Segoe UI', 'Roboto', sans-serif;
-  background: #232733;
-  color: #fff;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1c1f29;
+  color: #e0e0e0;
 }
 
-.App-header {
+/* App Container */
+.App {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  justify-content: flex-start;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
 }
 
-h1 {
-  font-size: 3rem;
-  margin: 2rem 0 1.5rem 0;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-form {
-  display: flex;
+/* Header */
+.App-header {
+  width: 100%;
+  max-width: 1200px;
   margin-bottom: 2rem;
-}
-
-input[type='text'] {
-  padding: 0.7rem 1rem;
-  border: none;
-  border-radius: 5px 0 0 5px;
-  font-size: 1.1rem;
-  width: 250px;
-  outline: none;
-  background-color: #b6ceff;
-  color: #1d0230;
-}
-
-button[type='submit'] {
-  padding: 0.7rem 1.5rem;
-  border: none;
-  border-radius: 0 5px 5px 0;
-  background: #1fa2ff;
-  color: #fff;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 1.1rem;
-  transition: background 0.2s;
-}
-
-button[type='submit']:hover {
-  background: #1976d2;
-}
-
-.movie-list {
+  text-align: center;
+  color: #61dafb;
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-  margin-top: 2rem;
-  width: 90vw;
-  max-width: 1200px;
-}
-
-.movie-card {
-  background: #323848;
-  border-radius: 10px;
-  box-shadow: 0 4px 32px 0 #181c2490;
-  padding: 1rem 1rem 0.5rem 1rem;
-  text-align: center;
-  width: 220px;
-  transition: transform 0.2s, box-shadow 0.2s;
-  display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 1rem;
 }
 
-.movie-card:hover {
-  transform: translateY(-10px) scale(1.04);
-  box-shadow: 0 8px 32px 0 #182c4a80;
+.App-header img {
+  height: 60px;
+  width: 60px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(25, 29, 36, 0.7);
+  background: #12141a;
 }
 
-.movie-card img {
-  width: 170px;
-  height: 255px;
-  object-fit: cover;
-  border-radius: 7px;
-  margin-bottom: 1rem;
-  background: #252a38;
+.App-header h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin: 0;
+  color: #61dafb;
+  user-select: none;
 }
 
-.movie-card h3 {
-  margin: 0.5rem 0 0.3rem 0;
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #1fa2ff;
+/* Search bar styling */
+form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 600px;
 }
 
-.movie-card p {
-  margin: 0 0 1rem 0;
+input[type="text"] {
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 8px 0 0 8px;
+  border: 1px solid #324559;
+  background-color: #12141a;
+  color: #e0e0e0;
   font-size: 1rem;
-  opacity: 0.8;
-}
-.overlay {
-  background: rgba(10, 10, 20, 0.7);
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: 999;
+  outline-offset: 2px;
+  outline-color: transparent;
+  transition: outline-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.modal {
-  max-width: 620px;
-  background: #22252c;
-  color: #fff;
-  margin: 6vh auto;
-  padding: 2rem;
-  border-radius: 14px;
-  outline: none;
-  position: relative;
-  box-shadow: 0 4px 44px 0 #131527bf;
-  z-index: 1000;
+input[type="text"]:focus {
+  outline-color: #61dafb;
+  box-shadow: 0 0 8px #61dafb88;
 }
-.movie-card:focus {
-  outline: 2px solid #1fa2ff;
-  outline-offset: 3px;
+
+button[type="submit"] {
+  padding: 0 1.5rem;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  font-weight: 600;
+  color: #12141a;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-button:focus,
-input:focus {
-  outline: 2px solid #1fa2ff;
+
+button[type="submit"]:hover {
+  background-color: #52a7db;
 }
+
+/* Movie List grid */
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+/* Movie Card */
 .movie-card {
-  background: #323848;
-  border-radius: 10px;
-  box-shadow: 0 4px 32px 0 #181c2490;
-  padding: 1rem 1rem 0.5rem 1rem;
+  background-color: #b80810c7;
+  padding: 1rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(255, 0, 30, 0.4);
+  cursor: pointer;
   text-align: center;
-  width: 220px;
+  color: #fff9f9;
+  position: relative;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .movie-card:hover,
-.movie-card:focus {
-  transform: translateY(-10px) scale(1.04);
-  box-shadow: 0 8px 32px 0 #182c4a80;
-  outline: none; /* For keyboard focus, we add a visible outline separately */
-}
-
 .movie-card:focus-visible {
-  outline: 2px solid #1fa2ff;
-  outline-offset: 3px;
-}
-:root {
-  --primary-color: #1fa2ff;
-  --background-color: #232733;
-  --card-bg-color: #323848;
-  --text-color: #fff;
+  transform: translateY(-8px);
+  box-shadow: 0 8px 32px rgba(24, 44, 89, 0.7);
+  outline: none;
 }
 
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-.app-logo {
-  display: block;
-  margin: 0 auto 16px auto; /* Center horizontally and add space below */
-  height: 250px;
-  width: 250px;
-  object-fit: contain;      /* Prevent stretching */
-  border-radius: 16px;      /* Optional: rounded corners for modern look */
-  box-shadow: 0 2px 16px 0 #191c2040; /* Soft shadow */
-  background: #fff;         /* Optional: logo background */
+.movie-card img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+  user-select: none;
 }
 
-/* Adjust for smaller screens if needed */
-@media (max-width: 600px) {
-  .app-logo {
-    height: 60px;
-    width: 60px;
-    margin-bottom: 10px;
+.movie-card h3 {
+  margin: 0.25rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #d4f6ff;
+}
+
+.movie-card p {
+  margin: 0;
+  font-size: 1rem;
+  color: #b0b8cc;
+}
+
+/* Favorite star button */
+.movie-card button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 24px;
+  background: transparent;
+  border: none;
+  color: gray;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.movie-card button:hover {
+  color: gold;
+}
+
+/* Modal Styles */
+.modal {
+  background-color: #1c1f29;
+  max-width: 800px;
+  margin: auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  outline: none;
+  color: #e0e0e0;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.8);
+}
+
+.overlay {
+  background-color: rgba(20, 20, 20, 0.85);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.modal button {
+  background-color: #61dafb;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: #12141a;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.modal button:hover {
+  background-color: #52a7db;
+}
+
+.modal h2 {
+  margin-top: 0;
+  color: #61dafb;
+}
+
+.modal img {
+  max-width: 200px;
+  border-radius: 10px;
+  user-select: none;
+}
+
+/* Trailer iframe */
+.modal iframe {
+  border-radius: 8px;
+  margin-top: 1rem;
+  box-shadow: 0 0 12px #61dafbaa;
+  width: 100%;
+  max-height: 315px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .App-header {
+    flex-direction: column;
+  }
+
+  .movie-list {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+
+  .modal {
+    max-width: 95%;
   }
 }
+.toggle-button-container {
+  width: 100%;
+  max-width: 1200px; /* match your app container */
+  margin: 0 auto;
+  text-align: left; /* aligns the button to left */
+  padding: 0 1rem;
+}
+
